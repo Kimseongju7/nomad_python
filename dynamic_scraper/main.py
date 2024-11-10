@@ -1,7 +1,35 @@
 from playwright.sync_api import sync_playwright
+import time
+from bs4 import BeautifulSoup
 
 p = sync_playwright().start()
 browser = p.chromium.launch(headless=False)
 page = browser.new_page()
-page.goto("https://google.com")
-page.screenshot(path = "screenshot.png")
+page.goto("https://www.wanted.co.kr/")
+#page.screenshot(path = "screenshot.png")
+time.sleep(5)
+
+#page.click("button.Aside_searchButton__rajGo Aside_isNotMobileDevice__hTNEe") #첫번째 클래스만 가지고 와야 했네
+#page.locator("button.Aside_searchButton__rajGo").click()
+page.click("button.Aside_searchButton__rajGo")
+time.sleep(5)
+
+page.get_by_placeholder("검색어를 입력해 주세요.").fill("flutter")
+time.sleep(5)
+
+page.keyboard.down("Enter")
+time.sleep(5)
+
+page.click("a#search_tab_position")
+time.sleep(5)
+
+
+for i in range(5):
+    page.keyboard.down("End")
+    time.sleep(1)
+
+content = page.content()
+print(content)
+p.stop()
+
+soup = BeautifulSoup(content, "html.parser")
