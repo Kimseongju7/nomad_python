@@ -12,6 +12,7 @@ def extract_berin_jobs(keyword):
         pages = 1
     for page in range(pages):
         tmp_url = f"{url}page/{page+1}/"
+        print(f"Scrapping {tmp_url}")
         resp = requests.get(tmp_url, headers={"User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"})
     soup = BeautifulSoup(resp.content, "html.parser")
     jobs = soup.find_all('li', class_="bjs-jlid")
