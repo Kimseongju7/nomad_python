@@ -3,6 +3,7 @@ import requests
 
 
 def extract_berin_jobs(keyword):
+    print("berlin Scraping")
     url =  f"https://berlinstartupjobs.com/skill-areas/{keyword}/"
     berlin_jobs = []
     response = requests.get(url, headers={"User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"})
