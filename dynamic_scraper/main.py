@@ -49,7 +49,7 @@ for job in jobs :
     title = job.find("strong", class_ = "JobCard_title__HBpZf").text
     company = job.find("span", class_= "JobCard_companyName__N1YrF").text
     reward = job.find("span", class_ = "JobCard_reward__cNlG5").text
-    job_datas.append(Job(link, title, com≈pany, reward))
+    job_datas.append(Job(link, title, company, reward))
 print(len(job_datas))
 for job in job_datas:
     print(job)
