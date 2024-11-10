@@ -37,8 +37,7 @@ def web_scrapper(url):
                 "description": description,
                 "url": link
             })
-    return job_datas
-
+        
 skils = ['python', 'typescript', 'javascript']
 urls = ['https://berlinstartupjobs.com/engineering/']
 for skil in skils:
