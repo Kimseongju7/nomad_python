@@ -25,6 +25,6 @@ def extract_berin_jobs(keyword):
             "company": company,
             "title": title,
             "description": description,
-            "url": link
+            "link": link
         })
     return berlin_jobs

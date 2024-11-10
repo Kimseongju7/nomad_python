@@ -2,9 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA_Compatible" content="IE-edge">
     <title>Job Srapper</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
 </head>
 <body>
-    <h1>Search Result for "{{keyword}}": </h1>
+    <main class="container">
+        <h1>Search Result for "{{keyword}}": </h1>
+        <figure>
+            <table role="grid">
+                <thead>
+                    <tr>
+                        <th>Company</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for job in jobs %}
+                    <tr>
+                        <td>{{job.company}}</td>
+                        <td>{{job.titie}}</td>
+                        <td>{{job.description}}</td>
+                        <td><a href="{{job.link}}" target="_blank">Apply Now &rAarr;</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </figure>
+    </main>
 </body>
 </html>
